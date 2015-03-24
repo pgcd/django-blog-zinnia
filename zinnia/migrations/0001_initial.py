@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.db import migrations
+from django.conf import settings
 import django.utils.timezone
 
 import mptt.fields
@@ -17,6 +18,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('auth', '0001_initial'),
         ('sites', '0001_initial'),
+        (migrations.swappable_dependency(settings.AUTH_USER_MODEL)),
     ]
 
     operations = [
